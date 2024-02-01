@@ -20,15 +20,15 @@ public class OutArgumentName
     public void StringNameReturn()
     {
         string valueStringName = "";
-        ArgNameTester.GetArgValueByNameReturn(valueStringName);
-        Assert.Equal("valueStringName", valueStringName);
+        var result = ArgNameTester.GetArgValueByNameReturn(valueStringName);
+        Assert.Equal("valueStringName", result);
     }
 
     [Fact]
     public void VarNameReturn()
     {
         var valueVarName = "";
-        ArgNameTester.GetArgValueByNameReturn(valueVarName);
-        Assert.Equal("valueVarName", valueVarName);
+        var result = ArgNameTester.GetArgValueByNameReturn(valueVarName);
+        Assert.Equal("valueVarName", result);
     }
 }

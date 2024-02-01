@@ -18,7 +18,7 @@ public class ArgNameTester
 
     public static string GetArgValueByNameReturn(string value, [CallerArgumentExpression(nameof(value))] string key = "")
     {
-        return $"{key} ({value})";
-        //return key;
+        return key;
+        //return $"{key} ({value})";
     }
 }
