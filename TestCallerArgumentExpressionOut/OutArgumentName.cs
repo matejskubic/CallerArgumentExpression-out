@@ -6,14 +6,14 @@ public class OutArgumentName
     public void StringNameOut()
     {
         ArgNameTester.GetArgValueByNameOut(out string valueStringName);
-        Assert.Equal("valueStringName", valueStringName);
+        Assert.Equal("string valueStringName", valueStringName);
     }
 
     [Fact]
     public void VarNameOut()
     {
         ArgNameTester.GetArgValueByNameOut(out var valueVarName);
-        Assert.Equal("valueVarName", valueVarName);
+        Assert.Equal("var valueVarName", valueVarName);
     }
 
     [Fact]
@@ -30,5 +30,16 @@ public class OutArgumentName
         var valueVarName = "";
         var result = ArgNameTester.GetArgValueByNameReturn(valueVarName);
         Assert.Equal("valueVarName", result);
+    }
+
+    [Fact]
+    public void Dynamic()
+    {
+        static string GetVarName()
+        {
+            return "MyVarName";
+        }
+        var result = ArgNameTester.GetArgValueByNameReturn(GetVarName());
+        Assert.Equal("GetVarName()", result);
     }
 }
